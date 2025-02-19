@@ -16,12 +16,17 @@ function playerChoice() {
         ("Type Rock Paper or Scissors");
     }
     input = input.toLowerCase();
-    let check = vaildateInput();
+    let check = validateInput(input);
+    while (check == false) {
+        input = prompt("Type Rock, Paper, or Scissors. Spelling should be exact, but capitalize if you want to")
+        input = input.toLowerCase();
+        check = validateInput(input);
+    }
 
  return input;
 }
 
-function vaildateInput(choice) {
+function validateInput(choice) {
     if(choices.includes(choice)) {
         return true;
     } else {
