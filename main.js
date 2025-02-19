@@ -10,9 +10,14 @@ function playRound() {
 }
 
 function playerChoice() {
-
+    let input = prompt("Type Rock Paper or Scissors");
+    while (input == null) {
+        ("Type Rock Paper or Scissors");
+    }
+    input = input.toLowerCase();
 }
 
 function computerChoice() {
+    return choices[Math.floor(Math.random()*choices.length)]
 
 }
