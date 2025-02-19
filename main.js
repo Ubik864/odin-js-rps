@@ -1,4 +1,5 @@
 const choices = ["rock", "paper", "scissors"];
+const winners = [];
 
 function game() {
     for (let i = 1; i <= 5; i++);
@@ -8,6 +9,8 @@ function game() {
 function playRound() {
     const playerSelection = playerChoice();
     const computerSelection = computerChoice();
+    const winner = checkWinner(playerSelection, computerSelection);
+    winners.push(winner);
 }
 
 function playerChoice() {
@@ -37,6 +40,20 @@ function validateInput(choice) {
 function computerChoice() {
     return choices[Math.floor(Math.random()*choices.length)]
 
+}
+
+function checkWinner(choiceP, choiceC) {
+    if (choiceP === choiceC) {
+        return "Tie";
+    } else if (
+        (choiceP === "rock" && choiceC == "scissors") ||
+        (choiceP === "paper" && choiceC == "rock") ||
+        (choiceP === "scissors" && choiceC == "paper")
+    ) {
+        return "Player";
+    } else {
+        return "Computer";
+    }
 }
 
 game();
