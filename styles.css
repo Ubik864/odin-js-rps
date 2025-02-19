@@ -3,3 +3,14 @@
     flex-direction: column;
     align-items: center;
 }
+
+button {
+    width: 100px;
+    height: auto;
+    background-color: yellow;
+    padding: 1px;
+}
+
+button:hover {
+    cursor: pointer;
+}
