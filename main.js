@@ -2,8 +2,10 @@ const choices = ["rock", "paper", "scissors"];
 const winners = [];
 
 function game() {
-    for (let i = 1; i <= 5; i++);
-    playRound();
+    for (let i = 1; i <= 5; i++) {
+        playRound(i);
+    }
+    
 }
 
 function playRound() {
@@ -54,6 +56,16 @@ function checkWinner(choiceP, choiceC) {
     } else {
         return "Computer";
     }
+}
+
+function logWins(playerChoice, computerChoice, winner) {
+    let playerWins = winners.filter(item => item == "Player").length;
+    let computerWins = winners.filter(item => item == "Computer").length;
+    let ties = winners.filter(item => item == "Tie").length;
+    console.log("Results");
+    console.log("Player Wins:", playerWins);
+    console.log("Computer Wins:", computerWins);
+    console.log("Ties:", ties);
 }
 
 game();
