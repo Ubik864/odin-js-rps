@@ -5,6 +5,7 @@ function game() {
     for (let i = 1; i <= 5; i++) {
         playRound(i);
     }
+    logWins();
     
 }
 
@@ -13,6 +14,7 @@ function playRound() {
     const computerSelection = computerChoice();
     const winner = checkWinner(playerSelection, computerSelection);
     winners.push(winner);
+    logRound(playerSelection, computerSelection, winner, round);
 }
 
 function playerChoice() {
@@ -66,6 +68,13 @@ function logWins(playerChoice, computerChoice, winner) {
     console.log("Player Wins:", playerWins);
     console.log("Computer Wins:", computerWins);
     console.log("Ties:", ties);
+}
+
+function logRound(playerChoice, computerChoice, winner, round) {
+    console.log("Round", round);
+    console.log("Player Chose", playerChoice);
+    console.log("Computer Chose", computerChoice);
+    console.log(winner, "Won the Round");
 }
 
 game();
