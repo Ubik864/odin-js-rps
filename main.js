@@ -9,7 +9,7 @@ function game() {
     
 }
 
-function playRound() {
+function playRound(round) {
     const playerSelection = playerChoice();
     const computerSelection = computerChoice();
     const winner = checkWinner(playerSelection, computerSelection);
@@ -75,6 +75,5 @@ function logRound(playerChoice, computerChoice, winner, round) {
     console.log("Player Chose", playerChoice);
     console.log("Computer Chose", computerChoice);
     console.log(winner, "Won the Round");
+    console.log("-------------------------------");
 }
-
-game();
